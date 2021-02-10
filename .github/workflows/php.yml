@@ -1,54 +1,21 @@
-name: phpunit
+name: Koseven
 
-on:
-  push:
-  workflow_dispatch:
-  pull_request:
-    branches: [ master ]
+on: [push,pull_request,workflow_dispatch]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: true
-      matrix:
-        php:
-          - '7.2'
-          - '7.3'
-          - '7.4'
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php }}
-        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
-        coverage: none
+      - name: Download current Docker-Image
+        run: docker pull koseven/docker:travis-devel
 
-    - uses: niden/actions-memcached@v7
+      - name: Mount Directories and run Docker-Machine
+        run: docker run -dtP --name unittest -v /home/runner/work/koseven/koseven:/tmp/koseven/ koseven/docker:travis-devel
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+      - name: Install composer dependencies
+        run: docker exec unittest /bin/sh -c "service redis-server start; cd /tmp/koseven; composer install"
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
-
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --quiet
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    - name: Run test suite
-      run: vendor/bin/phpunit
+      - name: Run Koseven Unittest(s)
+        run: docker exec unittest /bin/sh -c "cd /tmp/koseven; php vendor/bin/phpunit"

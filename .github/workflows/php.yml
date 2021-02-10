@@ -1,4 +1,4 @@
-name: PHP Composer
+name: phpunit
 
 on:
   push:
@@ -15,9 +15,9 @@ jobs:
       fail-fast: true
       matrix:
         php:
-          - 7.2
-          - 7.3
-          - 7.4
+          - '7.2'
+          - '7.3'
+          - '7.4'
 
     steps:
     - uses: actions/checkout@v2

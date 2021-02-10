@@ -235,9 +235,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 		return [
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "6a7082cf8cda13eff48c8158dda206ae"),
 				// IV
@@ -249,9 +249,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "625eefa18a4756454e218d8bfed56e36"),
 				// IV
@@ -263,9 +263,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "fd6e0b954ae2e3b723d6c9fcae6ab09b"),
 				// IV
@@ -277,9 +277,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "7b1ab9144b0239315cd5eec6c75663bd"),
 				// IV
@@ -291,9 +291,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "36466b6bd25ea3857ea42f0cac1919b1"),
 				// IV
@@ -305,9 +305,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "89373ee6e28397640d5082eed4123239"),
 				// IV
@@ -319,9 +319,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "bab0cceddc0abd63e3f82e9fbff7b8aa"),
 				// IV
@@ -333,9 +333,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "9c702898efa44557b29ed283f5bc0293"),
 				// IV
@@ -347,7 +347,7 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
 				MCRYPT_RIJNDAEL_128,
 				// key
@@ -361,9 +361,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 			],
 			[
 				// mode
-				MCRYPT_MODE_CBC,
+				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "97a1025529b9925e25bbe78770ca2f99"),
 				// IV
@@ -553,16 +553,16 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				'blowfish',
 				[
 					'key' => '7bZJJkmNrelj5NaKoY6h6rMSRSmeUlJuTeOd5HHka5XknyMX4uGSfeVolTz4IYy',
-					'cipher' => MCRYPT_BLOWFISH,
-					'mode' => MCRYPT_MODE_ECB,
+					'cipher' => 'MCRYPT_BLOWFISH',
+					'mode' => 'MCRYPT_MODE_ECB',
 				]
 			],
 			[
 				'tripledes',
 				[
 					'key' => 'a9hcSLRvA3LkFc7EJgxXIKQuz1ec91J7P6WNq1IaxMZp4CTj5m31gZLARLxI1jD',
-					'cipher' => MCRYPT_3DES,
-					'mode' => MCRYPT_MODE_CBC,
+					'cipher' => 'MCRYPT_3DES',
+					'mode' => 'MCRYPT_MODE_CBC',
 				]
 			],
 		];

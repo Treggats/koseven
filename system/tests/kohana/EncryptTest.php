@@ -349,7 +349,7 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// mode
 				'MCRYPT_MODE_CBC',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// key
 				pack("H*", "5674636dbdb38f705f0b08c372ef4785"),
 				// IV
@@ -469,7 +469,7 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// mode
 				'MCRYPT_MODE_NOFB',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// txt_invalid_encoded
 				".:This data is not a valid base 64 string:.",
 			],

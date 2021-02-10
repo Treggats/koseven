@@ -412,9 +412,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// key
 				"Some super secret key",
 				// mode
-				MCRYPT_MODE_NOFB,
+				'MCRYPT_MODE_NOFB',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// txt_plain
 				"The quick brown fox jumps over the lazy dog",
 			],
@@ -422,9 +422,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// key
 				"De finibus bonorum et malorum",
 				// mode
-				MCRYPT_MODE_NOFB,
+				'MCRYPT_MODE_NOFB',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// txt_plain
 				"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 			],
@@ -467,7 +467,7 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// key
 				"Some super secret key",
 				// mode
-				MCRYPT_MODE_NOFB,
+				'MCRYPT_MODE_NOFB',
 				// cypher
 				MCRYPT_RIJNDAEL_128,
 				// txt_invalid_encoded
@@ -477,9 +477,9 @@ class Kohana_EncryptTest extends Unittest_TestCase
 				// key
 				"Some super secret key",
 				// mode
-				MCRYPT_MODE_NOFB,
+				'MCRYPT_MODE_NOFB',
 				// cypher
-				MCRYPT_RIJNDAEL_128,
+				'MCRYPT_RIJNDAEL_128',
 				// txt_invalid_encoded
 				base64_encode("too short"),
 			],
